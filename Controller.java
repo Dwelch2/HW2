@@ -27,7 +27,7 @@ public class Controller implements Initializable {
     JFXListView studentListView;
 
     final String hostname = "derek-db.ckexfznrvq9e.us-east-1.rds.amazonaws.com";
-    final String dbName = "derek_db";
+    final String dbName = "derek-db";
     final String port = "3306";
     final String username = "derek";
     final String password = "D.welch96";
@@ -54,7 +54,7 @@ public class Controller implements Initializable {
                 String Name = "Parker";
 
                 String sql = "INSERT INTO Student VALUES " +
-                        " (' " + Name + ',' + idString + " ,TRUE)";
+                        " (' " + Name + "','" + idString + " ,)";
 
                 crt.executeUpdate(sql);
 
@@ -63,7 +63,7 @@ public class Controller implements Initializable {
                 String Name2 ="Ford";
 
                 sql = "INSERT INTO Student VALUES" +
-                        "('" + Name2 + "'," + idString + "', TRUE)";
+                        "('" + Name2 + "'," + idString + "')";
                 crt.executeUpdate(sql);
                 System.out.println("TABLE POPULATED");
 
@@ -120,10 +120,10 @@ public class Controller implements Initializable {
                 student.Age = UUID.fromString((result.getString("Age")));
                 student.Major = result.getString("Major");
                 student.GPA = UUID.fromString(result.getString("GPA"));
-                derek_db.add(student);
+               studentListView.add(student);
 
             }
-            if(url.equals);
+            //if(url.equals);
         }
         catch (Exception ex){
             System.out.println("Loaded");
